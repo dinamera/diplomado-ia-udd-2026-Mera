@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regulación de uso de datos Ley N. 21719 | Jardín Infantil Mandarina SpA</title>
+  <meta name="description" content="Regulación de uso de datos Ley N. 21719. Guía práctica y preguntas frecuentes sobre la protección y el tratamiento de datos personales en el ámbito educativo.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       VARIABLES Y SISTEMA DE DISEÑO (COHERENTE CON INDEX.HTML)
+       ========================================================================== */
+    :root {
+      --mandarina-500: #F36B21;
+      --mandarina-600: #DE5B14;
+      --mandarina-400: #FF853E;
+      --mandarina-100: #FFEADA;
+      --mandarina-50:  #FFF5EE;
+
+      --verde-500: #2E8B57;
+      --verde-600: #246E44;
+      --verde-100: #E2F3E9;
+      --verde-50:  #F2FAF5;
+
+      --bg-base: #FAF7F2;
+      --bg-surface: #FFFFFF;
+      --bg-alt: #F3EFE9;
+
+      --text-main: #2C221C;
+      --text-secondary: #5A4E46;
+      --text-muted: #82756C;
+      
+      --border-subtle: #E8DFD5;
+      --border-focus: #F36B21;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 2px 6px rgba(44, 34, 28, 0.04);
+      --shadow-md: 0 8px 24px rgba(44, 34, 28, 0.06);
+      --shadow-lg: 0 16px 36px rgba(44, 34, 28, 0.08);
+
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    button, input, textarea, select {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ==========================================================================
+       HEADER
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(250, 247, 242, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition-smooth);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+      gap: 1rem;
+    }
+
+    .brand-logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: clamp(0.35rem, 0.8vw, 0.9rem);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+
+    .nav-link {
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 0.35rem 0.55rem;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+      display: inline-block;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-link:hover {
+      color: var(--mandarina-600);
+      background: var(--mandarina-50);
+    }
+
+    .nav-highlight {
+      color: var(--mandarina-600) !important;
+      font-weight: 600;
+      background: var(--mandarina-50);
+      border: 1px solid var(--mandarina-100);
+    }
+
+    .nav-highlight:hover, .nav-highlight.active {
+      background: var(--mandarina-100);
+      color: var(--mandarina-600) !important;
+    }
+
+    .nav-cta {
+      background: var(--mandarina-500);
+      color: #FFFFFF !important;
+      font-weight: 600;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.84rem;
+      border-radius: var(--radius-full);
+      box-shadow: 0 3px 10px rgba(243, 107, 33, 0.25);
+      white-space: nowrap;
+      margin-left: 0.25rem;
+    }
+
+    .nav-cta:hover {
+      background: var(--mandarina-600);
+      transform: translateY(-1px);
+      box-shadow: 0 5px 14px rgba(243, 107, 33, 0.35);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       HERO LEY 21.719
+       ========================================================================== */
+    .ley-hero {
+      padding: 4.5rem 0 3rem;
+      background: linear-gradient(180deg, var(--bg-base) 0%, #FFFFFF 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .ley-hero-content {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .ley-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--mandarina-50);
+      border: 1px solid var(--mandarina-100);
+      color: var(--mandarina-600);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 0.95rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .ley-title {
+      font-family: var(--font-display);
+      font-size: 2.85rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+    }
+
+    .ley-title span {
+      color: var(--mandarina-500);
+    }
+
+    .ley-bajada {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--mandarina-600);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: var(--mandarina-50);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px dashed var(--mandarina-100);
+    }
+
+    .ley-description {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 2.25rem;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      border: none;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-primary {
+      background: var(--mandarina-500);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(243, 107, 33, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--mandarina-600);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(243, 107, 33, 0.35);
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-alt);
+      border-color: #D6CCC0;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       RESUMEN EJECUTIVO PARA EQUIPO MANDARINA
+       ========================================================================== */
+    .section-cards {
+      padding: 4rem 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #DBCFBF;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--mandarina-50);
+      color: var(--mandarina-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       FAQ INTERACTIVA (CONTENIDO DE FAQ_PROFESORES_LEY21719.HTML)
+       ========================================================================== */
+    .faq-section {
+      padding: 4.5rem 0 6rem;
+      background: var(--bg-alt);
+    }
+
+    .faq-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--verde-600);
+      background: var(--verde-100);
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 0.85rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .search-box-wrap {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .faq-search-input {
+      width: 100%;
+      padding: 1rem 1.4rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+      color: var(--text-main);
+      outline: none;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+    }
+
+    .faq-search-input:focus {
+      border-color: var(--mandarina-500);
+      box-shadow: 0 0 0 3px rgba(243, 107, 33, 0.15);
+    }
+
+    .chips-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .chip-btn {
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      user-select: none;
+    }
+
+    .chip-btn:hover {
+      border-color: var(--mandarina-500);
+      color: var(--mandarina-600);
+    }
+
+    .chip-btn.active {
+      background: var(--mandarina-500);
+      border-color: var(--mandarina-500);
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    .count-indicator {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .faq-cards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+    }
+
+    .faq-item-card:hover {
+      border-color: #D6CCC0;
+    }
+
+    .faq-item-card.open {
+      border-color: var(--mandarina-400);
+      box-shadow: var(--shadow-md);
+    }
+
+    .faq-card-header {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 1.35rem 1.6rem;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .faq-card-header:hover {
+      background: #FFFAF5;
+    }
+
+    .faq-header-content {
+      flex: 1;
+    }
+
+    .faq-category-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--verde-600);
+      background: var(--verde-50);
+      border: 1px solid var(--verde-100);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-question-text {
+      font-family: var(--font-display);
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+
+    .faq-toggle-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--bg-alt);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: transform 0.25s ease, background 0.2s, color 0.2s;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .faq-item-card.open .faq-toggle-icon {
+      transform: rotate(45deg);
+      background: var(--mandarina-500);
+      color: #FFFFFF;
+    }
+
+    .faq-card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+    }
+
+    .faq-card-body-inner {
+      padding: 0 1.6rem 1.6rem 1.6rem;
+      border-top: 1px solid #F3EFE9;
+      padding-top: 1.25rem;
+    }
+
+    .faq-answer-p {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 0.85rem;
+    }
+
+    .faq-answer-p:last-of-type {
+      margin-bottom: 1rem;
+    }
+
+    .faq-legal-ref {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--text-muted);
+      background: var(--bg-alt);
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .empty-message {
+      background: var(--bg-surface);
+      border: 1px dashed var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       CALL TO ACTION FINAL
+       ========================================================================== */
+    .cta-banner {
+      background: linear-gradient(135deg, #2C221C 0%, #1A1410 100%);
+      color: #FFFFFF;
+      padding: 4.5rem 0;
+      text-align: center;
+    }
+
+    .cta-banner-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner p {
+      font-size: 1.05rem;
+      color: #D1C5BA;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: #1F1B18;
+      color: #E6DFD7;
+      padding: 4.5rem 0 2.5rem;
+      border-top: 1px solid #332B25;
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 1rem;
+    }
+
+    .footer-text {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #ACA096;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-links a {
+      color: #ACA096;
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--mandarina-400);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #332B25;
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #8C8076;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 992px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .nav-menu {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .ley-title {
+        font-size: 2.15rem;
+      }
+      .ley-bajada {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo-link" title="Jardín Infantil Mandarina SpA">
+        <img src="WhatsApp Image 2026-09-08 at 8.00.34 PM.jpeg" alt="Logo Jardín Infantil Mandarina" class="brand-logo-img">
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="index.html#proyecto" class="nav-link">Proyecto</a></li>
+          <li><a href="index.html#jornadas" class="nav-link">Jornadas</a></li>
+          <li><a href="index.html#diagnostico" class="nav-link">Diagnóstico</a></li>
+          <li><a href="index.html#arquitectura-ia" class="nav-link">Asistente IA</a></li>
+          <li><a href="index.html#simulador" class="nav-link">Simulador</a></li>
+          <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+          <li><a href="ley-21719.html" class="nav-link nav-highlight active">Ley 21.719</a></li>
+          <li><a href="index.html#contacto" class="nav-link nav-cta">Matrículas</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú de navegación">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION LEY 21.719 -->
+  <section class="ley-hero">
+    <div class="container ley-hero-content">
+      <div class="ley-badge">
+        <span>Marco Normativo Oficial · República de Chile</span>
+      </div>
+
+      <h1 class="ley-title">
+        Regulación de uso de datos <span>Ley N. 21719</span>
+      </h1>
+
+      <div class="ley-bajada">
+        REGULA LA PROTECCIÓN Y EL TRATAMIENTO DE LOS DATOS PERSONALES Y CREA LA AGENCIA DE PROTECCIÓN DE DATOS PERSONALES MINISTERIO SECRETARÍA GENERAL DE LA PRESIDENCIA
+      </div>
+
+      <p class="ley-description">
+        Esta normativa establece el estándar legal para el tratamiento, resguardo y privacidad de los datos personales en Chile, con especial énfasis en los derechos de <strong>niños y niñas menores de edad</strong>, la protección reforzada de <strong>datos sensibles de salud</strong> y las obligaciones para los equipos pedagógicos y administrativos del <strong>Jardín Infantil Mandarina SpA</strong>.
+      </p>
+
+      <div class="hero-buttons">
+        <!-- Call to action principal solicitado -->
+        <a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" target="_blank" rel="noopener" class="btn btn-primary" title="Ver texto íntegro de la ley en la Biblioteca del Congreso Nacional">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+          Ver Ley N° 21.719 en PDF (BCN Chile)
+        </a>
+
+        <a href="#faq-profesores" class="btn btn-secondary">
+          Explorar Preguntas para Profesores y Personal ↓
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES CLAVE EN EL JARDÍN MANDARINA -->
+  <section class="section-cards">
+    <div class="container">
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon" style="background: var(--mandarina-100); color: var(--mandarina-600);">👶</div>
+          <h3 class="card-title">Protección de Menores (Menores de 14 años)</h3>
+          <p class="card-text">
+            Para párvulos de nivel medio menor (2-3 años) y medio mayor (3-4 años), todo tratamiento de datos requiere obligatoriamente el consentimiento libre, previo e informado de sus padres o apoderados titulares (Art. 16 quáter).
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon" style="background: var(--verde-100); color: var(--verde-600);">🩺</div>
+          <h3 class="card-title">Datos Sensibles de Salud & Alergias</h3>
+          <p class="card-text">
+            Fichas médicas, diagnósticos de alergias (APLV, celiaquía) o evaluaciones NEE/TEA tienen estándar reforzado de reserva. Solo pueden ser consultados por el personal estrictamente vinculado a su cuidado (Arts. 2° g) y 16).
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon" style="background: var(--mandarina-100); color: var(--mandarina-600);">📷</div>
+          <h3 class="card-title">Imágenes, Fotografías & WhatsApp</h3>
+          <p class="card-text">
+            Una foto o video es dato personal identificable. Está prohibido publicar registros en redes personales o compartirlos por canales no institucionales sin una autorización expresa y específica (Arts. 12 y 14 quinquies).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN INTERACTIVA DE PREGUNTAS FRECUENTES (FAQ PROFESORES) -->
+  <section id="faq-profesores" class="faq-section">
+    <div class="container faq-container">
+      <div class="section-header">
+        <span class="section-badge">Guía Práctica para el Aula</span>
+        <h2 class="section-title">Preguntas Frecuentes para Educadoras y Personal</h2>
+        <p class="section-subtitle">
+          Orientaciones concretas sobre cómo aplicar la Ley 21.719 en la rutina diaria del jardín, manejo de fichas, consultas de apoderados e incidentes.
+        </p>
+      </div>
+
+      <!-- Buscador -->
+      <div class="search-box-wrap">
+        <input type="text" id="faqSearch" class="faq-search-input" placeholder="🔍 Busca por palabra clave (ej: fotos, WhatsApp, apoderados, alergia, pendrive, consentimiento)...">
+      </div>
+
+      <!-- Chips de categorías -->
+      <div class="chips-wrapper" id="categoryChips"></div>
+
+      <!-- Contador de resultados -->
+      <div class="count-indicator" id="faqCountIndicator">Cargando preguntas...</div>
+
+      <!-- Lista de acordeón -->
+      <div class="faq-cards-list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION FINAL -->
+  <section class="cta-banner">
+    <div class="container cta-banner-inner">
+      <h2>Accede al Texto Oficial de la Ley N° 21.719</h2>
+      <p>
+        Publicada en el Diario Oficial el 13 de diciembre de 2024. Consulta la fuente normativa completa y su articulado en el portal de la Biblioteca del Congreso Nacional.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 1rem; padding: 0.85rem 2rem;">
+          Consultar Norma N° 1209272 en BCN Chile →
+        </a>
+        <a href="index.html" class="btn btn-secondary">
+          ← Volver a la Página Principal
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="WhatsApp Image 2026-09-08 at 8.00.34 PM.jpeg" alt="Logo Jardín Infantil Mandarina" style="height: 44px; filter: brightness(0) invert(1); margin-bottom: 1.25rem; opacity: 0.9;">
+          <p class="footer-text">
+            <strong>Jardín Infantil Mandarina SpA</strong><br>
+            Establecimiento privado de educación parvularia en Viña del Mar, Región de Valparaíso, Chile.<br>
+            Comprometidos con el bienestar integral y el estricto cumplimiento de la normativa de protección de datos.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navegación del Sitio</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#inicio">→ Inicio & Proyecto Educativo</a></li>
+            <li><a href="index.html#jornadas">→ Jornadas & Valores</a></li>
+            <li><a href="index.html#arquitectura-ia">→ Asistente Virtual Inteligente (GAIS)</a></li>
+            <li><a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" target="_blank" rel="noopener">→ Ley 21.719 en BCN Chile</a></li>
+            <li><a href="index.html#contacto">→ Proceso de Matrícula</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Equipo Académico UDD 2026</h4>
+          <p class="footer-text" style="line-height: 1.7;">
+            <strong>Integrantes:</strong><br>
+            • Barros Berguecio María Carolina<br>
+            • Mera Saldaña Dina<br>
+            • Godoy Aravena Eduardo Andrés<br><br>
+            <em>IA Afectiva, Neurocognitiva y Psicosocial aplicada al Diseño de Experiencia</em>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Jardín Infantil Mandarina SpA & Universidad del Desarrollo. Todos los derechos reservados.</span>
+        <span>Protección de Datos Personales en Educación Parvularia</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT INTERACTIVO DE FILTRADO Y BÚSQUEDA -->
+  <script>
+    // 1. Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        const isFlex = navMenu.style.display === 'flex';
+        navMenu.style.display = isFlex ? 'none' : 'flex';
+        if (!isFlex) {
+          navMenu.style.flexDirection = 'column';
+          navMenu.style.position = 'absolute';
+          navMenu.style.top = '74px';
+          navMenu.style.left = '0';
+          navMenu.style.width = '100%';
+          navMenu.style.background = '#FFFFFF';
+          navMenu.style.padding = '1.25rem 1.5rem';
+          navMenu.style.gap = '0.75rem';
+          navMenu.style.boxShadow = '0 10px 25px rgba(0,0,0,0.12)';
+          navMenu.style.borderBottom = '1px solid var(--border-subtle)';
+        }
+      });
+    }
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1040 && navMenu) {
+          navMenu.style.display = 'none';
+        }
+      });
+    });
+
+    // 2. Base de Datos de Preguntas de la Ley 21.719 (extraídas de faq_profesores_ley21719.html)
+    const faqs = [
+      {
+        cat: "Menores de edad",
+        q: "¿Necesito el consentimiento de los papás para tratar los datos de mis alumnos?",
+        a: [
+          "Depende de la edad. Para niños y niñas (menores de 14 años), sí: se requiere el consentimiento de sus padres o de quien tenga su cuidado personal, salvo que una ley lo autorice expresamente (por ejemplo, el registro básico de matrícula escolar).",
+          "Para adolescentes (14 a 18 años), en general rigen las mismas reglas que para un adulto. La excepción son sus datos sensibles (salud, orientación sexual, etc.): si el adolescente es menor de 16 años, esos datos sí requieren el consentimiento de sus padres o representante."
+        ],
+        ref: "Art. 16 quáter, Ley 21.719"
+      },
+      {
+        cat: "Menores de edad",
+        q: "¿Puedo publicar fotos o videos de mis alumnos en redes sociales o en el sitio del colegio?",
+        a: [
+          "Una fotografía identificable es un dato personal, así que en general necesitas el consentimiento previo y explícito de los apoderados (o del propio adolescente cuando corresponda) antes de publicarla, indicando claramente para qué se va a usar.",
+          "Revisa si el colegio o jardín cuenta con una autorización general firmada a inicio de año: si existe, verifica que cubra el uso específico que quieres darle (por ejemplo, redes sociales versus solo el diario mural interno)."
+        ],
+        ref: "Arts. 12 y 16 quáter, Ley 21.719"
+      },
+      {
+        cat: "Derechos de la familia",
+        q: "¿Qué hago si un apoderado me pide ver todos los datos que tengo sobre su hijo o hija?",
+        a: [
+          "Eso constituye el 'derecho de acceso'. No tienes que resolverlo tú personalmente: deriva la solicitud al canal oficial del establecimiento (Dirección o Delegado de Protección de Datos), porque el colegio como institución es quien debe responder por escrito dentro de plazo legal.",
+          "Mientras tanto, evita entregar información de forma informal o incompleta: lo importante es que la respuesta sea completa, ordenada y quede debidamente registrada."
+        ],
+        ref: "Arts. 5° y 11, Ley 21.719"
+      },
+      {
+        cat: "Derechos de la familia",
+        q: "¿Un apoderado puede oponerse a que use una plataforma que evalúa o perfila automáticamente a su hijo?",
+        a: [
+          "Sí. Si una plataforma toma decisiones automatizadas que afectan al alumno (por ejemplo, clasificarlo en un nivel de riesgo académico sin revisión humana), el titular de los datos tiene derecho a pedir que exista intervención humana y a solicitar una explicación clara de cómo se llegó a esa decisión.",
+          "En la práctica, esto significa que ninguna herramienta automatizada de IA o software puede reemplazar completamente tu criterio profesional en decisiones importantes sobre un alumno."
+        ],
+        ref: "Art. 8° bis, Ley 21.719"
+      },
+      {
+        cat: "Datos sensibles",
+        q: "¿Qué son los 'datos sensibles' y por qué debo tener más cuidado con ellos?",
+        a: [
+          "Son datos especialmente delicados: salud (incluyendo diagnósticos como TEA, TDAH, alergias o discapacidad), origen étnico, situación socioeconómica, creencias religiosas, orientación sexual e identidad de género, entre otros.",
+          "La ley exige un estándar mucho más alto para tratarlos: por regla general necesitan consentimiento expreso y solo deben usarse para el fin específico por el que fueron entregados (por ejemplo, un informe médico o diagnóstico solo debe circular entre quienes necesitan saberlo para apoyar al niño/a)."
+        ],
+        ref: "Arts. 2° g) y 16, Ley 21.719"
+      },
+      {
+        cat: "Datos sensibles",
+        q: "¿Puedo comentarle a otro profesor la situación de salud o familiar de un alumno?",
+        a: [
+          "Solo si esa información es estrictamente necesaria para que ese colega cumpla su rol formativo o de cuidado (por ejemplo, avisar a una educadora o profesor de educación física sobre una condición médica relevante o alergia alimentaria).",
+          "Compartir datos sensibles 'de pasillo' o en conversaciones informales, sin un propósito de cuidado claro, puede constituir una infracción al deber de confidencialidad, incluso si la intención es de buena fe."
+        ],
+        ref: "Art. 14 bis, Ley 21.719"
+      },
+      {
+        cat: "Seguridad e incidentes",
+        q: "Perdí un pendrive, un cuaderno de notas o dejé una planilla abierta con datos de alumnos. ¿Qué hago?",
+        a: [
+          "Avísale de inmediato a la Dirección o al Delegado de Protección de Datos del jardín, sin esperar a ver si 'pasa algo'. La ley obliga al establecimiento a reportar ciertas filtraciones a la Agencia de Protección de Datos sin dilaciones indebidas, y mientras antes se sepa, más rápido se puede mitigar el impacto.",
+          "Si el incidente involucra datos sensibles o de niños menores de 14 años, la obligación institucional de informar y actuar es todavía más estricta."
+        ],
+        ref: "Art. 14 sexies, Ley 21.719"
+      },
+      {
+        cat: "Seguridad e incidentes",
+        q: "¿Puedo usar mi WhatsApp personal o un Google Forms para recolectar datos de los alumnos?",
+        a: [
+          "Es una práctica común, pero conlleva altos riesgos: esos datos quedan fuera de los sistemas y controles de seguridad del jardín, y tú pasas a ser personalmente responsable de protegerlos igual que si fueran de la institución.",
+          "Antes de usar una herramienta externa, utiliza siempre el canal institucional oficial y, si no lo hay, limita al mínimo indispensable la información que solicitas y bórrala de tus dispositivos apenas deje de ser necesaria."
+        ],
+        ref: "Arts. 3° f) y 14 quinquies, Ley 21.719"
+      },
+      {
+        cat: "Rol del colegio",
+        q: "¿El 'responsable de datos' soy yo como profesor/a, o es el establecimiento?",
+        a: [
+          "Normalmente es el establecimiento educacional (como persona jurídica) el 'responsable de datos', porque es quien decide para qué se recolecta y usa la información. Tú, como educadora o docente, actúas dentro de ese marco, siguiendo los protocolos internos.",
+          "Sin embargo, eso no te exime de responsabilidad: si tratas datos fuera de lo autorizado por el jardín o con una finalidad personal o distinta, puedes incurrir en responsabilidad civil y disciplinaria."
+        ],
+        ref: "Art. 2° n), Ley 21.719"
+      },
+      {
+        cat: "Rol del colegio",
+        q: "¿Qué pasa con los datos de un alumno cuando se cambia de colegio o egresa?",
+        a: [
+          "Los datos solo pueden conservarse mientras sean necesarios para el fin con que se recolectaron. Pasado ese tiempo, deben eliminarse o anonimizarse de manera segura, salvo que una ley obligue a mantener ciertos registros (como las actas oficiales de notas o asistencia).",
+          "Esto es responsabilidad institucional del establecimiento, pero conviene que el personal no acumule copias personales de fichas o antecedentes una vez finalizado el ciclo."
+        ],
+        ref: "Art. 3° c), Ley 21.719"
+      },
+      {
+        cat: "Rol del colegio",
+        q: "¿Quién es el Delegado de Protección de Datos y cuándo debo consultarle?",
+        a: [
+          "Es la persona designada por la institución para supervisar el cumplimiento de esta ley, asesorar al equipo y ser el punto de contacto ante dudas, incidentes o solicitudes formales de las familias.",
+          "Consúltale ante cualquier duda real (incorporación de una nueva app, una solicitud inusual de un apoderado, o una posible filtración accidental) antes de tomar decisiones unilaterales."
+        ],
+        ref: "Art. 50, Ley 21.719"
+      },
+      {
+        cat: "Sanciones",
+        q: "¿Qué sanciones puede tener el colegio si no cumple con esta ley?",
+        a: [
+          "Las infracciones se clasifican en leves, graves y gravísimas, con multas que van desde amonestaciones hasta 5.000, 10.000 o 20.000 UTM según la gravedad y el número de personas afectadas.",
+          "Por eso las políticas internas del jardín (consentimientos de matrícula, protocolos de fotos, resguardo de fichas de salud) no son burocracia: son la protección legal de los niños, las familias y el propio equipo educativo."
+        ],
+        ref: "Arts. 34 bis a 35, Ley 21.719"
+      }
+    ];
+
+    // 3. Renderizado y Lógica Interactiva
+    const listEl = document.getElementById('faqList');
+    const chipsEl = document.getElementById('categoryChips');
+    const searchEl = document.getElementById('faqSearch');
+    const countEl = document.getElementById('faqCountIndicator');
+
+    const categories = ["Todas", ...Array.from(new Set(faqs.map(f => f.cat)))];
+    let activeCategory = "Todas";
+    let searchQuery = "";
+
+    function renderCategoryChips() {
+      chipsEl.innerHTML = "";
+      categories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'chip-btn' + (cat === activeCategory ? ' active' : '');
+        btn.textContent = cat;
+        btn.addEventListener('click', () => {
+          activeCategory = cat;
+          renderFaqs();
+        });
+        chipsEl.appendChild(btn);
+      });
+    }
+
+    function matchesFilter(item) {
+      const matchCat = (activeCategory === "Todas") || (item.cat === activeCategory);
+      const fullText = (item.q + " " + item.a.join(" ") + " " + item.cat + " " + item.ref).toLowerCase();
+      const matchQuery = (searchQuery.trim() === "") || fullText.includes(searchQuery.trim().toLowerCase());
+      return matchCat && matchQuery;
+    }
+
+    function renderFaqs() {
+      renderCategoryChips();
+      const filtered = faqs.filter(matchesFilter);
+
+      countEl.textContent = `${filtered.length} ${filtered.length === 1 ? 'pregunta encontrada' : 'preguntas encontradas'}`;
+      listEl.innerHTML = "";
+
+      if (filtered.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-message';
+        empty.innerHTML = `
+          <strong>No se encontraron preguntas con ese criterio de búsqueda.</strong><br>
+          Prueba buscando con palabras como <em>"fotos"</em>, <em>"salud"</em>, <em>"apoderados"</em> o haz clic en la categoría <em>"Todas"</em>.
+        `;
+        listEl.appendChild(empty);
+        return;
+      }
+
+      filtered.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'faq-item-card' + (index === 0 && searchQuery === "" && activeCategory === "Todas" ? ' open' : '');
+
+        const headerBtn = document.createElement('button');
+        headerBtn.className = 'faq-card-header';
+        headerBtn.innerHTML = `
+          <div class="faq-header-content">
+            <span class="faq-category-tag">${item.cat}</span>
+            <div class="faq-question-text">${item.q}</div>
+          </div>
+          <div class="faq-toggle-icon">+</div>
+        `;
+
+        const bodyWrap = document.createElement('div');
+        bodyWrap.className = 'faq-card-body';
+
+        const bodyInner = document.createElement('div');
+        bodyInner.className = 'faq-card-body-inner';
+
+        item.a.forEach(paragraph => {
+          const p = document.createElement('p');
+          p.className = 'faq-answer-p';
+          p.textContent = paragraph;
+          bodyInner.appendChild(p);
+        });
+
+        const refEl = document.createElement('div');
+        refEl.className = 'faq-legal-ref';
+        refEl.innerHTML = `📜 Referencia Legal: <strong>${item.ref}</strong>`;
+        bodyInner.appendChild(refEl);
+
+        bodyWrap.appendChild(bodyInner);
+
+        // Interacción de acordeón
+        headerBtn.addEventListener('click', () => {
+          const isOpen = card.classList.contains('open');
+          card.classList.toggle('open');
+          bodyWrap.style.maxHeight = isOpen ? '0px' : bodyWrap.scrollHeight + 'px';
+        });
+
+        card.appendChild(headerBtn);
+        card.appendChild(bodyWrap);
+        listEl.appendChild(card);
+
+        // Inicializar abierta la primera si corresponde
+        if (card.classList.contains('open')) {
+          setTimeout(() => {
+            bodyWrap.style.maxHeight = bodyWrap.scrollHeight + 'px';
+          }, 50);
+        }
+      });
+    }
+
+    searchEl.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderFaqs();
+    });
+
+    // Iniciar renderizado
+    renderFaqs();
+  </script>
+</body>
+</html>

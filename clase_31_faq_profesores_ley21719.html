@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protección de Datos en el Aula — Preguntas Frecuentes</title>
+<style>
+  :root{
+    --paper:#FAF7EC;
+    --paper-line:#E4DCC8;
+    --ink:#1F3A5C;
+    --ink-soft:#3A567A;
+    --pencil:#5B564C;
+    --pencil-light:#8A8374;
+    --red:#B23A2E;
+    --green:#3F6B4F;
+    --green-soft:#EAF1EC;
+    --card:#FFFDF6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 41px,
+      var(--paper-line) 41px,
+      var(--paper-line) 42px
+    );
+    font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+    color:var(--ink);
+    min-height:100vh;
+  }
+  .margin-rule{
+    position:fixed;
+    top:0; bottom:0; left:64px;
+    width:1px;
+    background:var(--red);
+    opacity:.35;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:56px 32px 90px 96px;
+  }
+  header h1{
+    font-size:2.1rem;
+    line-height:1.25;
+    margin:0 0 6px 0;
+    font-weight:400;
+  }
+  header .sub{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color:var(--pencil);
+    font-size:.98rem;
+    margin:0 0 28px 0;
+    max-width:56ch;
+  }
+  .base-note{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size:.78rem;
+    color:var(--pencil-light);
+    border-left:2px solid var(--paper-line);
+    padding-left:12px;
+    margin:0 0 34px 0;
+    line-height:1.5;
+  }
+  .search{
+    width:100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size:1rem;
+    padding:12px 14px;
+    border:1px solid var(--paper-line);
+    border-radius:3px;
+    background:var(--card);
+    color:var(--ink);
+    margin-bottom:18px;
+  }
+  .search:focus{ outline:2px solid var(--ink-soft); outline-offset:1px; }
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:32px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .chip{
+    font-size:.82rem;
+    padding:6px 12px;
+    border:1px solid var(--paper-line);
+    border-radius:999px;
+    background:var(--card);
+    color:var(--pencil);
+    cursor:pointer;
+    user-select:none;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .chip:hover{ border-color:var(--ink-soft); }
+  .chip.active{
+    background:var(--green);
+    border-color:var(--green);
+    color:#fff;
+  }
+  .count{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size:.8rem;
+    color:var(--pencil-light);
+    margin:-14px 0 18px 0;
+  }
+  .item{
+    background:var(--card);
+    border:1px solid var(--paper-line);
+    border-radius:3px;
+    margin-bottom:10px;
+    overflow:hidden;
+  }
+  .q{
+    width:100%;
+    text-align:left;
+    background:none;
+    border:none;
+    padding:16px 46px 16px 18px;
+    font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+    font-size:1.05rem;
+    color:var(--ink);
+    cursor:pointer;
+    position:relative;
+    line-height:1.4;
+  }
+  .q:hover{ background:#F5F1E4; }
+  .q .arrow{
+    position:absolute;
+    right:18px; top:50%;
+    transform:translateY(-50%) rotate(0deg);
+    transition:transform .2s ease;
+    color:var(--red);
+    font-size:1rem;
+  }
+  .item.open .q .arrow{ transform:translateY(-50%) rotate(45deg); }
+  .tag{
+    display:inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size:.68rem;
+    letter-spacing:.02em;
+    color:var(--green);
+    background:var(--green-soft);
+    padding:2px 8px;
+    border-radius:999px;
+    margin-bottom:8px;
+  }
+  .a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size:.95rem;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+  .a-inner{ padding:0 18px 18px 18px; }
+  .a-inner p{ margin:0 0 10px 0; }
+  .a-inner p:last-child{ margin-bottom:0; }
+  .ref{
+    font-size:.8rem;
+    color:var(--pencil-light);
+    font-style:italic;
+  }
+  .empty{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color:var(--pencil-light);
+    font-size:.95rem;
+    padding:20px 0;
+  }
+  footer{
+    margin-top:40px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size:.78rem;
+    color:var(--pencil-light);
+    border-top:1px solid var(--paper-line);
+    padding-top:16px;
+  }
+  @media (max-width:560px){
+    .margin-rule{ left:24px; }
+    .wrap{ padding:40px 20px 70px 44px; }
+    header h1{ font-size:1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="margin-rule"></div>
+<div class="wrap">
+  <header>
+    <h1>Protección de Datos en el Aula</h1>
+    <p class="sub">Guía práctica de preguntas frecuentes sobre la Ley 21.719 para profesoras y profesores, pensada para el uso diario en el colegio.</p>
+  </header>
+
+  <p class="base-note">Esta guía resume la Ley 21.719 en lenguaje simple para uso escolar. No reemplaza la política de protección de datos de tu colegio ni constituye asesoría legal — ante dudas concretas, consulta al Delegado de Protección de Datos de tu establecimiento.</p>
+
+  <input class="search" type="text" id="search" placeholder="Busca por palabra clave, por ejemplo: fotos, apoderados, WhatsApp…">
+
+  <div class="chips" id="chips"></div>
+  <p class="count" id="count"></p>
+
+  <div id="list"></div>
+
+  <footer>
+    Basado en la Ley N° 21.719, que regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales (publicada el 13-dic-2024). Prototipo funcional — el contenido puede ajustarse a la realidad de cada colegio.
+  </footer>
+</div>
+
+<script>
+const faqs = [
+  {
+    cat: "Menores de edad",
+    q: "¿Necesito el consentimiento de los papás para tratar los datos de mis alumnos?",
+    a: [
+      "Depende de la edad. Para niños y niñas (menores de 14 años), sí: se requiere el consentimiento de sus padres o de quien tenga su cuidado personal, salvo que una ley lo autorice expresamente (por ejemplo, el registro básico de matrícula).",
+      "Para adolescentes (14 a 18 años), en general rigen las mismas reglas que para un adulto. La excepción son sus datos sensibles (salud, orientación sexual, etc.): si el adolescente es menor de 16 años, esos datos sí requieren el consentimiento de sus padres o representante."
+    ],
+    ref: "Art. 16 quáter, Ley 21.719"
+  },
+  {
+    cat: "Menores de edad",
+    q: "¿Puedo publicar fotos o videos de mis alumnos en redes sociales o en el sitio del colegio?",
+    a: [
+      "Una fotografía identificable es un dato personal, así que en general necesitas el consentimiento de los apoderados (o del propio adolescente cuando corresponda) antes de publicarla, indicando claramente para qué se va a usar.",
+      "Revisa si el colegio ya cuenta con una autorización general firmada a inicio de año: si existe, verifica que cubra el uso específico que quieres darle (por ejemplo, redes sociales versus solo el diario mural)."
+    ],
+    ref: "Arts. 12 y 16 quáter, Ley 21.719"
+  },
+  {
+    cat: "Derechos de la familia",
+    q: "¿Qué hago si un apoderado me pide ver todos los datos que tengo sobre su hijo o hija?",
+    a: [
+      "Eso es el 'derecho de acceso'. No tienes que resolverlo tú personalmente: deriva la solicitud al canal oficial del colegio (dirección, encargado de convivencia o Delegado de Protección de Datos), porque el colegio como institución es quien debe responder por escrito dentro de plazo.",
+      "Mientras tanto, evita entregar información de forma informal o incompleta: lo importante es que la respuesta sea completa, ordenada y quede registrada."
+    ],
+    ref: "Arts. 5° y 11, Ley 21.719"
+  },
+  {
+    cat: "Derechos de la familia",
+    q: "¿Un apoderado puede oponerse a que use una plataforma que evalúa o perfila automáticamente a su hijo?",
+    a: [
+      "Sí. Si una plataforma toma decisiones automatizadas que afectan al alumno (por ejemplo, clasificarlo en un nivel de riesgo académico sin revisión humana), el titular de los datos tiene derecho a pedir que exista intervención humana y a solicitar una explicación de cómo se llegó a esa decisión.",
+      "En la práctica, esto significa que ninguna herramienta automatizada debería reemplazar completamente tu criterio como docente en decisiones importantes sobre un alumno."
+    ],
+    ref: "Art. 8° bis, Ley 21.719"
+  },
+  {
+    cat: "Datos sensibles",
+    q: "¿Qué son los 'datos sensibles' y por qué debo tener más cuidado con ellos?",
+    a: [
+      "Son datos especialmente delicados: salud (incluyendo diagnósticos como TEA, TDAH o discapacidad), origen étnico, situación socioeconómica, creencias religiosas, orientación sexual e identidad de género, entre otros.",
+      "La ley exige un estándar más alto para tratarlos: por regla general necesitan consentimiento expreso y solo deben usarse para el fin específico por el que fueron entregados (por ejemplo, un diagnóstico psicopedagógico solo debería circular entre quienes necesitan saberlo para apoyar al alumno)."
+    ],
+    ref: "Arts. 2° g) y 16, Ley 21.719"
+  },
+  {
+    cat: "Datos sensibles",
+    q: "¿Puedo comentarle a otro profesor la situación de salud o familiar de un alumno?",
+    a: [
+      "Solo si esa información es necesaria para que ese colega cumpla su rol (por ejemplo, avisar a un profesor de educación física sobre una condición médica relevante para la clase).",
+      "Compartir datos sensibles 'de pasillo', sin un propósito pedagógico claro, puede constituir una infracción al deber de confidencialidad, incluso si la intención es de buena fe."
+    ],
+    ref: "Art. 14 bis, Ley 21.719"
+  },
+  {
+    cat: "Seguridad e incidentes",
+    q: "Perdí un pendrive, un cuaderno de notas o dejé una planilla abierta con datos de alumnos. ¿Qué hago?",
+    a: [
+      "Avísale de inmediato a la dirección del colegio o al Delegado de Protección de Datos, sin esperar a ver si 'pasa algo'. La ley obliga al colegio a reportar ciertas filtraciones a la Agencia de Protección de Datos sin dilaciones indebidas, y mientras antes se sepa, más rápido se puede reaccionar.",
+      "Si el incidente involucra datos sensibles o de niños menores de 14 años, la obligación de informar es todavía más estricta."
+    ],
+    ref: "Art. 14 sexies, Ley 21.719"
+  },
+  {
+    cat: "Seguridad e incidentes",
+    q: "¿Puedo usar mi WhatsApp personal o un Google Forms para recolectar datos de los alumnos?",
+    a: [
+      "Es una práctica común, pero conlleva riesgos: esos datos quedan fuera de los sistemas y controles de seguridad del colegio, y tú pasas a ser responsable de protegerlos igual que si fueran de la institución.",
+      "Antes de usar una herramienta externa, revisa si el colegio tiene un canal oficial equivalente y, si no lo hay, limita al mínimo indispensable la información que pides y bórrala apenas deje de ser necesaria."
+    ],
+    ref: "Arts. 3° f) y 14 quinquies, Ley 21.719"
+  },
+  {
+    cat: "Rol del colegio",
+    q: "¿El 'responsable de datos' soy yo como profesor, o es el colegio?",
+    a: [
+      "Normalmente es el colegio (como persona jurídica) el 'responsable de datos', porque es quien decide para qué se recolecta y usa la información. Tú, como docente, actúas dentro de ese marco, siguiendo las políticas internas que el colegio debe tener.",
+      "Eso no te exime de responsabilidad: si tratas datos fuera de lo autorizado por el colegio o con una finalidad distinta, puedes generar responsabilidad personal."
+    ],
+    ref: "Art. 2° n), Ley 21.719"
+  },
+  {
+    cat: "Rol del colegio",
+    q: "¿Qué pasa con los datos de un alumno cuando se cambia de colegio o egresa?",
+    a: [
+      "Los datos solo pueden conservarse mientras sean necesarios para el fin con que se recolectaron. Pasado ese tiempo, deben eliminarse o anonimizarse, salvo que una ley obligue a mantener ciertos registros (como la hoja de vida académica oficial).",
+      "Esto es responsabilidad institucional del colegio, pero como docente conviene que no acumules copias personales de fichas o evaluaciones más allá de lo necesario."
+    ],
+    ref: "Art. 3° c), Ley 21.719"
+  },
+  {
+    cat: "Rol del colegio",
+    q: "¿Quién es el Delegado de Protección de Datos y cuándo debo consultarle?",
+    a: [
+      "Es la persona designada por el colegio para asesorar en el cumplimiento de esta ley y ser el punto de contacto ante dudas, incidentes o solicitudes de las familias.",
+      "Consúltale ante cualquier duda real (uso de una nueva app, una solicitud inusual de un apoderado, una posible filtración) antes de decidir por tu cuenta."
+    ],
+    ref: "Art. 50, Ley 21.719"
+  },
+  {
+    cat: "Sanciones",
+    q: "¿Qué sanciones puede tener el colegio si no cumple con esta ley?",
+    a: [
+      "Las infracciones se clasifican en leves, graves y gravísimas, con multas que van desde amonestaciones hasta miles de UTM según la gravedad y el número de personas afectadas.",
+      "Por eso las políticas internas del colegio (autorizaciones, protocolos de manejo de fotos, reporte de incidentes) no son un trámite burocrático: son la forma en que la institución —y quienes trabajan en ella— se protegen de estas sanciones."
+    ],
+    ref: "Arts. 34 bis a 35, Ley 21.719"
+  }
+];
+
+const list = document.getElementById('list');
+const chipsEl = document.getElementById('chips');
+const searchEl = document.getElementById('search');
+const countEl = document.getElementById('count');
+
+const categories = ["Todas", ...Array.from(new Set(faqs.map(f => f.cat)))];
+let activeCat = "Todas";
+let query = "";
+
+function renderChips(){
+  chipsEl.innerHTML = "";
+  categories.forEach(cat => {
+    const chip = document.createElement('div');
+    chip.className = 'chip' + (cat === activeCat ? ' active' : '');
+    chip.textContent = cat;
+    chip.addEventListener('click', () => { activeCat = cat; render(); });
+    chipsEl.appendChild(chip);
+  });
+}
+
+function matches(f){
+  const inCat = activeCat === "Todas" || f.cat === activeCat;
+  const text = (f.q + " " + f.a.join(" ") + " " + f.cat).toLowerCase();
+  const inSearch = query.trim() === "" || text.includes(query.trim().toLowerCase());
+  return inCat && inSearch;
+}
+
+function render(){
+  renderChips();
+  const filtered = faqs.filter(matches);
+  countEl.textContent = filtered.length + (filtered.length === 1 ? " pregunta encontrada" : " preguntas encontradas");
+  list.innerHTML = "";
+
+  if(filtered.length === 0){
+    const empty = document.createElement('div');
+    empty.className = 'empty';
+    empty.textContent = "No encontramos preguntas con ese criterio. Prueba con otra palabra o categoría.";
+    list.appendChild(empty);
+    return;
+  }
+
+  filtered.forEach((f, idx) => {
+    const item = document.createElement('div');
+    item.className = 'item';
+
+    const qBtn = document.createElement('button');
+    qBtn.className = 'q';
+    qBtn.innerHTML = '<span class="tag">' + f.cat + '</span><br>' + f.q + '<span class="arrow">+</span>';
+
+    const aWrap = document.createElement('div');
+    aWrap.className = 'a';
+    const aInner = document.createElement('div');
+    aInner.className = 'a-inner';
+    f.a.forEach(p => {
+      const para = document.createElement('p');
+      para.textContent = p;
+      aInner.appendChild(para);
+    });
+    const ref = document.createElement('p');
+    ref.className = 'ref';
+    ref.textContent = f.ref;
+    aInner.appendChild(ref);
+    aWrap.appendChild(aInner);
+
+    qBtn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      aWrap.style.maxHeight = isOpen ? '0px' : aWrap.scrollHeight + 'px';
+    });
+
+    item.appendChild(qBtn);
+    item.appendChild(aWrap);
+    list.appendChild(item);
+  });
+}
+
+searchEl.addEventListener('input', (e) => { query = e.target.value; render(); });
+
+render();
+</script>
+</body>
+</html>
